@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <RuntimeIdentifier>browser-wasm</RuntimeIdentifier>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Include="Bootsharp" Version="*-*"/>
+        <PackageReference Include="DiscUtils" Version="0.16.13" />
+        <PackageReference Include="DiscUtils.Core" Version="0.16.13" />
+        <PackageReference Include="DiscUtils.Iso9660" Version="0.16.13" />
+    </ItemGroup>
+</Project>
