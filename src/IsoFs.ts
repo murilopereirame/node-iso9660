@@ -1,11 +1,16 @@
-import {IsoReader} from "../IsoReader/IsoReader/bin/bootsharp";
+import bootsharp, {IsoReader} from "bootsharp";
 import Reader = IsoReader.Reader;
 import {IsoStream} from "./IsoStream";
 
 export class IsoFs {
     private stream: IsoStream
 
-    constructor(private readonly path: string) {
+    static init = async (path: string) => {
+        await bootsharp.boot();
+        return new IsoFs(path)
+    }
+
+    private constructor(private readonly path: string) {
         this.stream = new IsoStream(this.path);
     }
 

@@ -1,3 +1,1 @@
-import { IsoFs } from "./IsoFs"
-
-export { IsoFs }
+export { IsoFs } from "./IsoFs"

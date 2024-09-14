@@ -1,18 +1,41 @@
 {
-  "name": "iso9660",
-  "version": "1.0.0",
+  "name": "node-iso9660",
+  "version": "0.1.0",
+  "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
+    "build": "npm run compile && npm i && rollup -c",
     "compile": "cd IsoReader && dotnet publish",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/murilopereirame/node-iso9660.git",
+    "directory": "/"
+  },
+  "keywords": [
+    "iso",
+    "iso9660"
+  ],
+  "files": [
+    "dist/*",
+    "README.md",
+    "LICENSE",
+    "tsconfig.json"
+  ],
+  "author": "Murilo Pereira",
+  "license": "GPL-3.0-or-later",
   "description": "",
+  "dependencies": {
+    "bootsharp": "file:IsoReader/IsoReader/bin/bootsharp"
+  },
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^26.0.1",
+    "@rollup/plugin-node-resolve": "^15.2.3",
     "@types/node": "^22.5.5",
+    "rollup": "^4.21.3",
+    "rollup-plugin-typescript2": "^0.36.0",
     "typescript": "^5.6.2"
   }
 }
