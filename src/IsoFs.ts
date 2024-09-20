@@ -6,7 +6,10 @@ export class IsoFs {
     private stream: IsoStream
 
     static init = async (path: string) => {
-        await bootsharp.boot();
+        if (bootsharp.getStatus() === bootsharp.BootStatus.Standby) {
+            await bootsharp.boot();
+        }
+
         return new IsoFs(path)
     }
 
